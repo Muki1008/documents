@@ -14,6 +14,7 @@ export class App extends React.PureComponent {
         return (
             <Router hashType="noslash">
                 <div className={styles.appContainer}>
+                    
                     <Route path={Routes.START} component={StartView} exact={true}/>
                     <Route path={Routes.DOCUMENTS} component={DocumentsView} exact={true}/>
                     <Route path={Routes.USERS} component={UsersView} exact={true}/>
