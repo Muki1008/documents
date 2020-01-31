@@ -5,6 +5,8 @@ import { UsersView } from '../UsersView/UsersView';
 import { Routes } from '../../enums/routes';
 import { StartView } from '../startView/StartView';
 import { DocumentsView } from '../documentsView/DocumentsView';
+import { AppHeader } from '../appHeader/AppHeader';
+import { SideMenu } from '../menuView/SideMenu';
 
 /**
  * The application component that displays the application.
@@ -12,12 +14,17 @@ import { DocumentsView } from '../documentsView/DocumentsView';
 export class App extends React.PureComponent {
     public render() {
         return (
-            <Router hashType="noslash">
-                <div className={styles.appContainer}>
-                    
-                    <Route path={Routes.START} component={StartView} exact={true}/>
-                    <Route path={Routes.DOCUMENTS} component={DocumentsView} exact={true}/>
-                    <Route path={Routes.USERS} component={UsersView} exact={true}/>
+            <Router>
+                <div>
+                    <AppHeader/>
+                    <div className={styles.appContainer}>
+                        <SideMenu/>
+                        <div className={styles.menuContainer}>
+                            <Route path={Routes.START} component={StartView} exact={true}/>
+                            <Route path={Routes.USERS} component={UsersView} exact={true}/>
+                            <Route path={Routes.DOCUMENTS} component={DocumentsView} exact={true}/>
+                        </div>
+                    </div>
                 </div>
             </Router>
         );

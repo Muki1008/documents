@@ -1,5 +1,5 @@
 export enum Routes {
-    START = '/start',
+    START = '',
     DOCUMENTS = '/documents',
     USERS = '/users'
 }
