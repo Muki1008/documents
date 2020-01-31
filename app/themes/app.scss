@@ -2,8 +2,10 @@
 
 .app-container {
   font-family: Arial sans-serif;
+  display: flex;
 }
 
 .menu-container {
   background-color: blueviolet;
+  flex-grow: 1;
 }

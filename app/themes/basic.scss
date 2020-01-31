@@ -4,6 +4,10 @@
  */
 @import 'mixins';
 
+body {
+  margin: 0;
+}
+
 button {
   color: #0074d9;
   border: 1px solid #0000fe;
