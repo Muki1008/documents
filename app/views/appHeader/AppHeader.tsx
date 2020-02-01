@@ -16,7 +16,7 @@ export class AppHeader extends React.PureComponent<AppHeaderProps> {
     public render(): React.ReactNode {
         return (
             <div onClick={this.props.toggleActive} className={css.headerContainer}>
-                Header
+                Headerb
             </div>
         );
     }
