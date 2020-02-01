@@ -42,7 +42,6 @@ export class SideMenu extends React.PureComponent<MenuProps, MenuState> {
                     to={item.path}
                 >
                     {item.linkValue}
-                    asdadsadasdasdasdasd
                 </NavLink>
             );
         }
