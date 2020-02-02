@@ -3,6 +3,9 @@ import * as css from '../../themes/menu.scss';
 import { NavLink } from 'react-router-dom';
 import { Paths, routes } from '../../enums/routes';
 import { joinCSS } from '../../common/AppUtils';
+import * as Icons from '@material-ui/icons';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import { ExpansionPanelDetails, ExpansionPanelSummary, withStyles } from '@material-ui/core';
 
 interface MenuProps {
     active: boolean;
@@ -11,6 +14,28 @@ interface MenuProps {
 interface MenuState {
     activeLink: Paths;
 }
+
+const ExpansionDetails = withStyles({
+    root: {
+        display: 'block',
+        backgroundColor: 'orange',
+        transition: 'none'
+    }
+})(ExpansionPanelDetails);
+
+const Summary = withStyles({
+    root: {
+        backgroundColor: 'blue',
+        transition: 'none'
+    }
+})(ExpansionPanelSummary);
+
+const Panel = withStyles({
+    root: {
+        backgroundColor: 'red!important',
+        transition: 'none'
+    }
+})(ExpansionPanel);
 
 /**
  * TODO.
@@ -58,6 +83,25 @@ export class SideMenu extends React.PureComponent<MenuProps, MenuState> {
                 <div>
                     {String(this.props.active)}
                 </div>
+                <Panel>
+                    <ExpansionDetails>
+                       <div>Start</div>
+                    </ExpansionDetails>
+                </Panel>
+                <Panel>
+                    <Summary
+                        expandIcon={<Icons.ExpandMore />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                    >
+                       Tables
+                    </Summary>
+                    <ExpansionDetails>
+                        <div>Documents</div>
+                        <div>Users</div>
+                        <div>Suppliers</div>
+                    </ExpansionDetails>
+                </Panel>
             </div>
         );
     }
