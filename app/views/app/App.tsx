@@ -1,11 +1,11 @@
 import * as React from 'react';
+import { DocumentsView } from '../documentsView/DocumentsView';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import * as styles from '../../themes/app.scss';
 import { UsersView } from '../UsersView/UsersView';
-import { Paths } from '../../enums/routes';
 import { StartView } from '../startView/StartView';
-import { DocumentsView } from '../documentsView/DocumentsView';
 import { AppHeader } from '../appHeader/AppHeader';
+import { Paths } from '../../enums/routes';
 import { SideMenu } from '../menuView/SideMenu';
 
 interface AppState {
